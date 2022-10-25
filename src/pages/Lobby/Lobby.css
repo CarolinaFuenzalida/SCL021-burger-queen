@@ -1,0 +1,80 @@
+body{
+    background-image: url("https://wallpaperaccess.com/full/184481.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.divLobby {
+    height: 600px;
+    width: 100%;
+    background-color: #FDCBCA;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Logo{
+    width: 100%;
+    height: 500px;
+    display: flex;
+   justify-content: center;
+}
+
+.buttonRouter{
+    width: 35%;
+    height: 25%;
+    border-color: #48BFF1;
+    background-color: #48BFF1;
+    align-self: flex-end;
+    color:white;
+    border-radius: 30px;
+}
+.buttonRouter a {
+color: white;
+font-size: 45px;
+
+}
+
+
+
+@media only screen and (min-width: 768px) {
+ body{
+    background-image: url("https://wallpaperaccess.com/full/184481.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.divLobby {
+    height: 600px;
+    width: 100%;
+    background-color: #FDCBCA;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Logo{
+    width: 100%;
+    height: 500px;
+    display: flex;
+   justify-content: center;
+}
+
+.buttonRouter{
+    width: 35%;
+    height: 25%;
+    border-color: #48BFF1;
+    background-color: #48BFF1;
+    align-self: flex-end;
+    color:white;
+    border-radius: 30px;
+}
+
+.buttonRouter a {
+color: white;
+font-size: 45px;
+}
+
+}
+
+
