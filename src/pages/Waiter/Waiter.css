@@ -1,0 +1,75 @@
+.DivLeft {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+#backWaiter {
+    width: 20%;
+    height: 30px;
+    align-self: flex-start;
+    align-items: center;
+}
+#backWaiter a { 
+    font-size: 20px;
+}
+.OptionTables{
+    width: 75%;
+    height: 80px;
+}
+.SelectOption{
+    padding-top: 20px;
+    width: 40%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 25px;
+}
+.SelectOption button {
+    align-self: center;
+    width: 100%;
+}
+.displayMenu {
+    display: flex;
+}
+.inputCostumerName {
+    width: 90%;
+    height: 40px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #FF91B2;
+    border-color: #FF91B2;
+}
+#displayMenu {
+    width: 50%;
+    height: 500px;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.SelectedMenu {
+    height: 250px;
+    width: 100%;
+    border-radius: 30px;
+    border-color: #48BFF1;
+    background-color: #48BFF1;
+    color: white;
+    font-size: 20px;
+}
+.SelectedMenu img {
+    height: 100px;
+    width: 100px;
+   
+}
+
+#itemDescription {
+    font-size: 10px;
+}
+.OptionTables{
+    display: flex;
+    justify-content: center;
+}

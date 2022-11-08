@@ -1,101 +1,134 @@
-{
-    "breakfast": [
+ { 
+  "menu":    
+    [
       {
         "id": 1,
         "name": "Huevitos Gudetama",
         "description": "Tostadas con Huevos estrellados forma de Gudetama",
         "price": 5.00,
-        "image": "https://i.imgur.com/rOzjMNi.png"
+        "type": "breakfast",
+        "image": "src/img/Gudetama.png"
       },
       {
         "id": 2,
         "name": "Twin-Star Waffles",
         "description": "Waffles con forma de Twin Star, fruta de temporada y crema chantilli",
-        "price": 7.00
+        "price": 7.00,
+        "type": "breakfast",
+        "image": "src/img/TwinStars.png"
       },
       {
         "id": 3,
         "name": "Pochacoo Sandwich",
         "description": "Grilled Sandwich con jamón, 4 quesos, tomate y lechuga",
-        "price": 5.00
+        "price": 5.00,
+        "type": "breakfast",
+        "image": "src/img/Pochacoo.png"
       },
       {
         "id": 4,
         "name": "Cinnamoroll Roll",
         "description": "2 Rollitos de Canela con Frosting",
-        "price": 7.00
+        "price": 7.00,
+        "type": "breakfast",
+        "image": "src/img/CinnamonRoll.png"
       },
       {
         "id": 5,
         "name": "Pudding de Pompompurin",
         "description": "Copa con Pudding de Chia, Avena y trozos de Mango, Papaya y Maracuya",
-        "price": 6.00
-      }
-    ],
-    
-    "lunch": [
+        "price": 6.00,
+        "type": "breakfast",
+        "image": "src/img/Pompompurin.png"
+      },
       {
         "id": 6,
         "name": "My Melody Burguer",
         "description": "Hamburguesa doble con pan de beterraga, Golf",
-        "price": 10.00
+        "price": 10.00,
+        "type": "lunch",
+        "image": "src/img/MyMelody.png"
       },
       {
         "id": 7,
         "name": "Kuromi Burguer",
         "description": "Hamburguesa doble con pan negro, BBQ",
-        "price": 10.00
+        "price": 10.00,
+        "type": "lunch",
+        "image": "src/img/Kuromi.png"
       },
       {
         "id": 8,
         "name": "Keropi Salad",
         "description": "Ensalada de hortalizas verdes, tomates cherry",
-        "price": 6.00
+        "price": 6.00,
+        "type": "lunch",
+        "image": "src/img/Keropi.png"
       },
       {
         "id": 9,
-        "name": "Agrettsuko Burguer",
+        "name": "Aggretsuko Burguer",
         "description": "Hamburguesa doble con pan saborizado cebolla, salsa extra picante",
-        "price": 10.00
+        "price": 10.00,
+        "type": "lunch",
+        "image": "src/img/Aggretsuko.png"
       },
       {
         "id": 10,
         "name": "Hangyodon Goham",
         "description": "Base de arroz condimentado, toppings de verduras y salmón",
-        "price": 5.00
-      }
-    ],
-    
-    "drinks": [
+        "price": 5.00,
+        "type": "lunch",
+        "image": "src/img/Hangyodon.png"
+      },
       {
         "id": 11,
         "name": "Chococat Caliente",
         "description": "Chocolate Caliente",
-        "price": 7.00
+        "price": 6.00,
+        "type": "drinks",
+        "image": "src/img/Chococat.png"
+
       },
       {
         "id": 12,
         "name":"Kitty Drink",
         "description": "Malteada a base de helado, con fresas",
-        "price": 5.00
+        "price": 6.00,
+        "type": "drinks",
+        "image": "src/img/HelloKittyShake.png"
       },
       {
         "id": 13,
         "name": "Pandapple",
         "description": "Coctel de la casa, sabor manzana",
-        "price": 1.00
+        "price": 6.00,
+        "type": "drinks",
+        "image": "src/img/Pandapple.png"
       },
       {
         "id": 14,
-        "name": "Badtz-Maru ",
+        "name": "Badtz-Maru",
         "description": "Bebida Carbonatada sabor Mango",
-        "price": 4.00
+        "price": 4.00,
+        "type": "drinks",
+        "image": "src/img/BadtzMaru.png"
       },
       {
-        "id": 14,
+        "id": 15,
         "name": "Sweet Sweet Piano",
         "description": "Jugo natural de frutas decorado con algodon de azúcar",
-        "price": 4.00
+        "price": 5.00,
+        "type": "drinks",
+        "image": "src/img/SweetSweetPiano.png"
+      },
+      {
+        "id": 16,
+        "name": "Japanese Coffee",
+        "description": "Café estilo Japonés",
+        "price": 4.00,
+        "type": "drinks",
+        "image": "src/img/JapaneseCoffee.png"
       }
     ]
 }
