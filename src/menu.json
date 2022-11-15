@@ -77,7 +77,7 @@
         "id": 10,
         "name": "Hangyodon Goham",
         "description": "Base de arroz condimentado, toppings de verduras y salmón",
-        "price": 5.00,
+        "price": 8.00,
         "type": "lunch",
         "image": "src/img/Hangyodon.png"
       },

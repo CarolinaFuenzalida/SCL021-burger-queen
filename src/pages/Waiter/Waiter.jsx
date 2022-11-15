@@ -1,63 +1,112 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import  AllMenu  from "../../menu.json";
+import { FilterMenu } from "../../components/FilterMenu";
 import "./Waiter.css";
+import { Context } from "../../components/Context";
+import {  Order} from "../../components/Order";
 
-
-
-
-  
 export const Waiter = () => { 
-   // Guardamos el Menú
-  const dataMenu = AllMenu.menu;
 
- // const globalContext = useContext(Context);
- // Empieza por defecto en desayuno 
+  const globalContext = useContext(Context);
+  const sendOrder = () => {
+    if (globalContext.client === "" || globalContext.table === "") {
+      alert("Creo que olvidaste escribir el nombre o mesa del cliente");
+    } 
+     else {
+      confirm(true).then((result) => {
+        if (result =  true) {
+          alert("Enviado");
+          globalContext.resumeOrder();
+          globalContext.setProducts([]);
+          globalContext.changeClient("");
+          globalContext.changeTable("");
+        }
+      });
+    }
+  };
 
- const Button = dataMenu.filter((element) => element.type === "breakfast");
-  const [product, changeProduct] = useState(Button);
-  const typeProduct = (option) => {
-    changeProduct(dataMenu.filter((element) => element.type === option));
+  const onChange = (e) => {
+    if (e.target.name === "client") {
+      globalContext.changeClient(e.target.value);
+    } else if (e.target.name === "table") {
+      globalContext.changeTable(e.target.value);
+    }
   };
 
  return ( 
-    
     <div className="mainDivWaiter">
-      <div className="DivLeft"> 
+      <header className="Top">
       <button className="buttonRouter" id="backWaiter"> {" "}<Link to="/">Back</Link>{" "}</button>
-      <div className="OptionTables"> <input  className="inputCostumerName" id="inputTable" placeholder="Ingresa Número de Mesa"></input></div>
-       
-      
-      <input  className="inputCostumerName" placeholder="Ingresa Nombre del cliente"></input>
-      
-        <div className="SelectOption">  
-        <button id="BreakfastButton" className="buttonRouter" onClick={() => typeProduct("breakfast")}>Desayuno</button>
-        <button id="LunchButton" className="buttonRouter" onClick={() => typeProduct("lunch")}>Almuerzo</button>  
-        <button id="DrinkButton" className="buttonRouter" onClick={() => typeProduct("drinks")}>Bebidas</button>  
-         </div>
-         <div id="displayMenu">
-        {product.map((e) => (
-          <div key={e.id}>
-            <button className="SelectedMenu">
-              <p>{e.name}</p>
-              <p >${e.price}</p>
-              <img src={e.image}></img>
-              <p id="itemDescription">{e.description}</p>
-            </button>
-          </div>
-        ))}
+      <img src="src\img\SanrioCoffeeLogo1.png"></img>
+      <button className="buttonRouter" id="backWaiter"> {" "}<Link to="/Kitchen">Cocina</Link>{" "}</button> 
+      </header>
+      <div className="DivLeft"> 
+      <div className="OptionTables"> 
+      <input className="inputCostumer" id="inputName" placeholder="Ingresa Nombre del cliente" name="client"
+                onChange={onChange}></input>
+      <input className="inputCostumer" id="inputTable" placeholder="N° de Mesa"   name="table"
+                onChange={onChange}></input>
       </div>
-
- 
-        <div className="DivRight"> </div>
+      <FilterMenu/>
+      </div>
+        <div className="DivRight"> 
+        <main className="DivProducts">
+        {globalContext.products.length >= 1 ? (
+          
+          <section className="DivProducts">
+            <div className="ShowClientNameTable"> 
+            <p>Cliente:  {globalContext.client} </p>
+            <p>Mesa:  {globalContext.table} </p>    </div>
+            
+            {globalContext.products.map((item) => (
+              <section key={item.id} className ="ProductsToOrder">
+                <div className="ProductName">
+                  <p>{item.name}</p>
+                  <p>${item.price}</p>
+                </div>
+                <div className="AddOrRemove">
+                  <button className="EditButton"
+                    onClick={() => globalContext.onRemove(item)}
+                  >
+                    -
+                  </button>
+                  <p>{item.qty}</p>
+                  <button className="EditButton"
+                    onClick={() => globalContext.onAdd(item)}
+                  >
+                    +
+                  </button>
+                </div>
+                <button  className="EditButton"
+                  onClick={() => globalContext.removeProducts(item)}
+                >
+                  x
+                </button>
+              </section>
+            ))}
+          </section>
+        ) : (
+          <div className="BeforeOrder">
+            <h1 > Selecciona algo del Menú </h1>
+            <img  src="src\img\MyMelodyOops.png" ></img>
+          </div>
+        )} 
+       
+      </main> 
+      <div className="TotalAndOrder"> 
+      <section>
+      
+       
+          <p>Total: $ {globalContext.itemsPrice} </p>
+       
+    
+    </section>
+      <button className="buttonOrder" onClick={() => sendOrder()}>
+              Enviar Pedido
+            </button>
+            </div>
          </div>
+    
     </div>
   );
 };
-
-/*  <div id="displayMenu"> 
-            { dataMenu.breakfast.map(element => (
-                <div className="SelectedMenu">
-                {element.name} 
-                {element.price}
-                </div>)) }  */

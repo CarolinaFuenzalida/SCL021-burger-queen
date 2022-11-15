@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "staging": "sanrio-coffee",
+    "default": "sanrio-coffee"
+  },
+  "targets": {},
+  "etags": {}
+}
