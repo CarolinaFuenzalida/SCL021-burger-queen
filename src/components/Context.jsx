@@ -21,6 +21,7 @@ export const Provider = ({ children }) => {
       if (exist) {
         setProducts(
           products.map((item) =>
+          
             item.id === product.id ? { ...exist, qty: exist.qty + 1 } : item
           )
         );
@@ -60,7 +61,7 @@ export const Provider = ({ children }) => {
     //Función para guardar orden de cliente a Firestore
     const resumeOrder = async () => {
       try {
-        await addDoc(collection(db, "Orders"), {
+        await addDoc(collection(db, "Pedidos"), {
           client: client,
           table: table,
           total: itemsPrice,

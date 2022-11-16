@@ -3,19 +3,41 @@ import { Link } from "react-router-dom";
 import { FilterMenu } from "../../components/FilterMenu";
 import "./Waiter.css";
 import { Context } from "../../components/Context";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2";
 import {  Order} from "../../components/Order";
 
 export const Waiter = () => { 
 
   const globalContext = useContext(Context);
-  const sendOrder = () => {
+
+
+   const sendOrder = () => {
     if (globalContext.client === "" || globalContext.table === "") {
-      alert("Creo que olvidaste escribir el nombre o mesa del cliente");
-    } 
-     else {
-      confirm(true).then((result) => {
-        if (result =  true) {
-          alert("Enviado");
+      Swal.fire({
+        title: "Ups...",
+        text: "Creo que olvidaste escribir el nombre o mesa del cliente",
+        icon: "error",
+      });
+    } else if (globalContext.products.length === 0) {
+      Swal.fire({
+        title: "Espera un momento!",
+        text: "No has ingresado productos al pedido",
+        icon: "error",
+      });
+    } else {
+      Swal.fire({
+        title: "¿Deseas confirmar el pedido?",
+        text: "Si tienes dudas, consúltalo con el cliente",
+        icon: "warning",
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirmar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Enviado", "El pedido ha sido enviado a Cocina", "success");
           globalContext.resumeOrder();
           globalContext.setProducts([]);
           globalContext.changeClient("");
