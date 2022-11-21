@@ -7,8 +7,8 @@ export const Context = React.createContext();
 
 export const Provider = ({ children }) => {
     //Estado para obtener el nombre del cliente y mesa
-    const [client, changeClient] = useState("");
-    const [table, changeTable] = useState("");
+    const [client, setClient] = useState("");
+    const [table, setTable] = useState("");
   
     //Estado para añadir productos al pedido
     const [products, setProducts] = useState([]);
@@ -61,24 +61,37 @@ export const Provider = ({ children }) => {
     //Función para guardar orden de cliente a Firestore
     const resumeOrder = async () => {
       try {
-        await addDoc(collection(db, "Pedidos"), {
+        const docRef = await addDoc(collection(db, "Pedidos"), {
           client: client,
           table: table,
           total: itemsPrice,
           order: products,
           date: new Date(),
           status: "Pendiente",
-        });
+        })
+        console.log('Document written with ID: ', docRef.id);
+        return docRef
       } catch (error) {
         throw new Error("Error al guardar el pedido");
       }
     };
+
+    const newOrder = async(table, client, products, state, itemsPrice ) => {
+      await addDoc(collection(db, "Pedidos"), {
+        client: client,
+        table: table,
+        order: products,
+        state: state,
+        total: itemsPrice,
+        date: new Date(),
+     });
+   }
   
     const props = {
       client,
-      changeClient,
+      setClient,
       table,
-      changeTable,
+      setTable,
       onAdd,
       onRemove,
       products,
@@ -86,6 +99,7 @@ export const Provider = ({ children }) => {
       removeProducts,
       itemsPrice,
       resumeOrder,
+      newOrder
     };
   
     return <Context.Provider value={props}>{children}</Context.Provider>;

@@ -3,16 +3,17 @@ import  AllMenu  from "../menu.json";
 import "../pages/Waiter/Waiter.css";
 import { Provider, Context} from "./Context";
 
-
-
 export const FilterMenu  = () => { 
 
+// Guardo Menú en una variable
 const dataMenu = AllMenu.menu;
-
+// Traer Global Context para extraer funciones (onAdd)
 const globalContext = useContext(Context);
 // Empieza por defecto en desayuno 
 const Breakfast = dataMenu.filter((element) => element.type === "breakfast");
+// Usar State para actualizar información, se inicia en Breakfast
 const [product, setProduct] = useState(Breakfast);
+// Función de filtrado por opción seleccionada
 const typeProduct = (option) => {
    setProduct(dataMenu.filter((element) => element.type === option));
  };
@@ -20,11 +21,11 @@ const typeProduct = (option) => {
 return ( 
    <div className="DivOptions">
      <div className="SelectOption">  
-     <button id="BreakfastButton" className="buttonRouter" onClick={() => typeProduct("breakfast")}>Desayuno</button>
-     <button id="LunchButton" className="buttonRouter" onClick={() => typeProduct("lunch")}>Almuerzo</button>  
-     <button id="DrinkButton" className="buttonRouter" onClick={() => typeProduct("drinks")}>Bebidas</button>  
+     <button className="buttonRouter" onClick={() => typeProduct("breakfast")}>Desayuno</button>
+     <button className="buttonRouter" onClick={() => typeProduct("lunch")}>Almuerzo</button>  
+     <button className="buttonRouter" onClick={() => typeProduct("drinks")}>Bebidas</button>  
      </div>
-     <div id="displayMenu">
+     <div className ="displayMenu">
        {product.map((e) => (
          <div key={e.id}>
            <button className="SelectedMenu" onClick={() => globalContext.onAdd(e)}>
@@ -36,6 +37,6 @@ return (
      </div>
        ))}
      </div>
-        </div>
+     </div>
  );
 };

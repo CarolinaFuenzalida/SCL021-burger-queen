@@ -19,7 +19,7 @@ body{
     display: flex;
    justify-content: center;
 }
-.buttonRouter{
+.buttonRouter {
     width: 35%;
     height: 25%;
     border-color: #48BFF1;
@@ -31,6 +31,7 @@ body{
 .buttonRouter a {
 color: white;
 font-size: 45px;
+text-decoration: none;
 }
 @media only screen and (min-width: 768px) {
  body{

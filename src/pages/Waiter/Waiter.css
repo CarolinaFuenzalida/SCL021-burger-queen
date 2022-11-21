@@ -1,7 +1,11 @@
 .mainDivWaiter{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap
+}
+.mainDivWaiter img {
+width: 90px;
+height: 90px;
 }
 .Top {
     display: flex;
@@ -17,17 +21,39 @@
 #backWaiter a { 
     font-size: 20px;
 }
-
-.mainDivWaiter img {
-width: 90px;
-height: 90px;
-}
 .DivLeft {
-    width: 50%;
+    width: 48%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 15px;
+    padding: 10px;
+}
+.OptionTables{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    justify-content: space-around;
+}
+.inputCostumer {
+    width: 90%;
+    height: 40px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #FF91B2;
+    border-color: #FF91B2;
+}
+#inputName{
+    width: 70%;
+    color: white;
+}
+#inputTable{
+    width: 15%;
+    margin-right: 35px;
+    color: white;
+}
+.DivOptions {
+    display: flex;
+    width: 100%;
 }
 .SelectOption{
     padding-top: 20px;
@@ -43,10 +69,6 @@ height: 90px;
     width: 100%;
 }
 .displayMenu {
-    display: flex;
-}
-
-#displayMenu {
     width: 50%;
     height: 500px;
     padding: 20px;
@@ -67,46 +89,18 @@ height: 90px;
 .SelectedMenu img {
     height: 100px;
     width: 100px;
-   
 }
 #itemDescription {
     font-size: 10px;
 }
-.inputCostumer {
-    width: 90%;
-    height: 40px;
-    border-radius: 15px;
-    padding: 5px;
-    background-color: #FF91B2;
-    border-color: #FF91B2;
-}
-.OptionTables{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    justify-content: space-around;
-}
-#inputName{
-    width: 70%;
-    color: white;
-}
-#inputTable{
-    width: 15%;
-    margin-right: 35px;
-    color: white;
-}
-.DivOptions {
-    display: flex;
-    width: 100%;
-}
 .DivRight{
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 48%;
     height: 600px;
     overflow-y: auto;
     gap: 10px;
-    
+    padding: 10px;
 }
 .DivProducts {
     background-color: #48BFF1;
@@ -116,17 +110,6 @@ height: 90px;
     display: flex;
     flex-direction: column;
     gap:20px;
-}
-
-.ProductsToOrder{
-    background-color: #48BFF1;
-    height: 150px;
-    width: 100%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
 }
 .BeforeOrder {
     display: flex;
@@ -142,6 +125,54 @@ height: 90px;
 .BeforeOrder img {
     width: 300px;  
     height: 300px;
+}
+.ShowClientNameTable {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.ShowClientNameTable p {
+    font-size: 20px;
+    color: white;
+    width: 40%;
+    text-align: center;
+}
+.ProductsToOrder{
+    background-color: #48BFF1;
+    height: 150px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.ProductName {
+    background-color: #F7ECEC;
+    width: 45%;
+    border-radius: 15px;
+    color: #FF91B2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+.AddOrRemove {
+    display: flex;
+    width: 25%;
+    gap: 25px;
+}
+.EditButton {
+    background-color: #FF91B2;
+    color: white;
+    width: 30px;
+    height:30px ;
+    border-radius: 15px;
+    border-bottom: #FF91B2;
+    align-items: center;
+    align-self: center;
 }
 .TotalAndOrder {
     color: white;
@@ -160,45 +191,4 @@ height: 90px;
     border-color:#FF91B2;
     color: white;
     border-radius: 15px;
-}
-.ShowClientNameTable {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-}
-.ShowClientNameTable p {
-    font-size: 20px;
-    color: white;
-    width: 40%;
-    text-align: center;
-}
-.EditButton {
-    background-color: #FF91B2;
-    color: white;
-    width: 30px;
-    height:30px ;
-    border-radius: 15px;
-    border-bottom: #FF91B2;
-    align-items: center;
-    align-self: center;
-}
-
-
-.ProductName {
-    background-color: #F7ECEC;
-    width: 45%;
-    border-radius: 15px;
-    color: #FF91B2;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    font-size: 20px;
-}
-.AddOrRemove {
-    display: flex;
-    width: 25%;
-    gap: 25px;
-
 }

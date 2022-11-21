@@ -1,11 +1,10 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import { FilterMenu } from "../../components/FilterMenu";
 import "./Waiter.css";
 import { Context } from "../../components/Context";
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2";
-import {  Order} from "../../components/Order";
+import { NavBar } from "../../components/NavBar";
+
 
 export const Waiter = () => { 
 
@@ -38,10 +37,13 @@ export const Waiter = () => {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire("Enviado", "El pedido ha sido enviado a Cocina", "success");
-          globalContext.resumeOrder();
           globalContext.setProducts([]);
-          globalContext.changeClient("");
-          globalContext.changeTable("");
+          globalContext.setClient("");
+          globalContext.setTable("");
+          /*globalContext.resumeOrder(); */
+          console.log(globalContext.table, globalContext.client, globalContext.products, "pending", globalContext.itemsPrice)
+          globalContext.newOrder(globalContext.table, globalContext.client, globalContext.products, "pending", globalContext.itemsPrice)
+          //globalContext.newOrder(table,globalContext.setClient(""), globalContext.setProducts([]), "pending")
         }
       });
     }
@@ -49,25 +51,21 @@ export const Waiter = () => {
 
   const onChange = (e) => {
     if (e.target.name === "client") {
-      globalContext.changeClient(e.target.value);
+      globalContext.setClient(e.target.value);
     } else if (e.target.name === "table") {
-      globalContext.changeTable(e.target.value);
+      globalContext.setTable(e.target.value);
     }
   };
 
  return ( 
     <div className="mainDivWaiter">
-      <header className="Top">
-      <button className="buttonRouter" id="backWaiter"> {" "}<Link to="/">Back</Link>{" "}</button>
-      <img src="src\img\SanrioCoffeeLogo1.png"></img>
-      <button className="buttonRouter" id="backWaiter"> {" "}<Link to="/Kitchen">Cocina</Link>{" "}</button> 
-      </header>
+      <NavBar/>
       <div className="DivLeft"> 
       <div className="OptionTables"> 
       <input className="inputCostumer" id="inputName" placeholder="Ingresa Nombre del cliente" name="client"
-                onChange={onChange}></input>
-      <input className="inputCostumer" id="inputTable" placeholder="N° de Mesa"   name="table"
-                onChange={onChange}></input>
+       onChange={onChange}></input>
+      <input className="inputCostumer" id="inputTable" placeholder="N° de Mesa" name="table"
+       onChange={onChange}></input>
       </div>
       <FilterMenu/>
       </div>
@@ -99,7 +97,7 @@ export const Waiter = () => {
                     +
                   </button>
                 </div>
-                <button  className="EditButton"
+                <button className="EditButton"
                   onClick={() => globalContext.removeProducts(item)}
                 >
                   x
@@ -110,7 +108,7 @@ export const Waiter = () => {
         ) : (
           <div className="BeforeOrder">
             <h1 > Selecciona algo del Menú </h1>
-            <img  src="src\img\MyMelodyOops.png" ></img>
+            <img  src="src\img\GudetamaChef1.png" ></img>
           </div>
         )} 
        
