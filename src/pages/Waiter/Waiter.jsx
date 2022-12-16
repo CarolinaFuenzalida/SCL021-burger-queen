@@ -4,13 +4,14 @@ import "./Waiter.css";
 import { Context } from "../../components/Context";
 import Swal from "sweetalert2";
 import { NavBar } from "../../components/NavBar";
+import { BiTrash, BiPlus, BiMinus, BiArrowBack} from "react-icons/bi";
+
 
 
 export const Waiter = () => { 
 
   const globalContext = useContext(Context);
-
-
+  
    const sendOrder = () => {
     if (globalContext.client === "" || globalContext.table === "") {
       Swal.fire({
@@ -40,10 +41,9 @@ export const Waiter = () => {
           globalContext.setProducts([]);
           globalContext.setClient("");
           globalContext.setTable("");
-          /*globalContext.resumeOrder(); */
           console.log(globalContext.table, globalContext.client, globalContext.products, "pending", globalContext.itemsPrice)
           globalContext.newOrder(globalContext.table, globalContext.client, globalContext.products, "pending", globalContext.itemsPrice)
-          //globalContext.newOrder(table,globalContext.setClient(""), globalContext.setProducts([]), "pending")
+          
         }
       });
     }
@@ -87,20 +87,17 @@ export const Waiter = () => {
                 <div className="AddOrRemove">
                   <button className="EditButton"
                     onClick={() => globalContext.onRemove(item)}
-                  >
-                    -
+                  > <BiMinus/>
                   </button>
                   <p>{item.qty}</p>
                   <button className="EditButton"
                     onClick={() => globalContext.onAdd(item)}
-                  >
-                    +
+                  > <BiPlus/>
                   </button>
                 </div>
-                <button className="EditButton"
+                <button className="EditButton"  
                   onClick={() => globalContext.removeProducts(item)}
-                >
-                  x
+                  > <BiTrash />
                 </button>
               </section>
             ))}

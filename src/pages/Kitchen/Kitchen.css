@@ -21,7 +21,7 @@
     margin-top: 20px;
 }
 #backMain {
-    width: 80%;
+    width: 100%;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -103,7 +103,7 @@ font-size: 20px;
     text-align:center;
 }
 .itemName {
-    background-color: white;
+    background-color: #F7ECEC;
     width: 80%;
     border-radius: 15px;
     text-align:center;

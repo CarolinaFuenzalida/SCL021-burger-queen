@@ -8,8 +8,7 @@ import { Routes, Route, useLocation} from "react-router-dom";
 export const App = () => {
 
   const location = useLocation();
-
-  console.log(location)
+  
   return (
     <>
       <Routes>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, deleteDoc} from "firebase/firestore";
 import { db } from "../firebase";
 
 
@@ -15,7 +15,6 @@ export const Provider = ({ children }) => {
   
     //Función para añadir productos al carro y aumentar cantidad
     const onAdd = (product) => {
-        console.log("holisbobis")
         console.log(product)
       const exist = products.find((item) => item.id === product.id);
       if (exist) {
@@ -76,16 +75,31 @@ export const Provider = ({ children }) => {
       }
     };
 
-    const newOrder = async(table, client, products, state, itemsPrice ) => {
+    const newOrder = async (table, client, products, state, itemsPrice ) => {
       await addDoc(collection(db, "Pedidos"), {
         client: client,
         table: table,
         order: products,
-        state: state,
+        status: state,
         total: itemsPrice,
         date: new Date(),
      });
    }
+
+    const [statusOrder, setStatusOrder] = useState(status);
+    const updateStatus = async () => {
+      if (statusOrder === "Listo") {
+        return;
+      }
+      try {
+        await updateDoc(doc(db, "Pedidos"), {
+          status: "Listo",
+        });
+        setStatusOrder("Listo");
+      } catch (error) {
+        throw new Error("Error al actualizar el status");
+      }
+    };
   
     const props = {
       client,

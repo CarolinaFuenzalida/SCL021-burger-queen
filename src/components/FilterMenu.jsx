@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import  AllMenu  from "../menu.json";
 import "../pages/Waiter/Waiter.css";
-import { Provider, Context} from "./Context";
+import { Context } from "./Context";
 
 export const FilterMenu  = () => { 
 
@@ -22,8 +22,8 @@ return (
    <div className="DivOptions">
      <div className="SelectOption">  
      <button className="buttonRouter" onClick={() => typeProduct("breakfast")}>Desayuno</button>
-     <button className="buttonRouter" onClick={() => typeProduct("lunch")}>Almuerzo</button>  
-     <button className="buttonRouter" onClick={() => typeProduct("drinks")}>Bebidas</button>  
+     <button className="buttonRouter" id="Lunch" onClick={() => typeProduct("lunch")}>Almuerzo</button>  
+     <button className="buttonRouter" id="Drinks"onClick={() => typeProduct("drinks")}>Bebidas</button>  
      </div>
      <div className ="displayMenu">
        {product.map((e) => (

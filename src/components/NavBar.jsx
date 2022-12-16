@@ -1,19 +1,22 @@
 import { Link  } from "react-router-dom";
 import "../pages/Waiter/Waiter.css";
+import { BiArrowBack} from "react-icons/bi";
+import { GiCookingPot} from "react-icons/gi";
+
 
 export const NavBar = () => { 
-  console.log(location)
+
 
 return location.pathname == "/Waiter" ? ((
     <header className="Top">
-      <button className="buttonRouter" id="backWaiter"> {" "}<Link to="/">Back</Link>{" "}</button>
+      <Link to="/" className="buttonStyle"> <button className="buttonR" > {" "}<BiArrowBack/>{" "}</button></Link>
       <img src="src\img\SanrioCoffeeLogo1.png"></img>
-      <button className="buttonRouter" id="backWaiter"> {" "}<Link to="/Kitchen">Cocina</Link>{" "}</button> 
+      <Link to="/Kitchen" className="buttonStyle"><button className="buttonR">{" "}<GiCookingPot/>{" "}</button></Link>
       </header>
     ) ): (
       <header className="TopKitchen">
-      <button className="buttonRouter" id="backMain"><img src="src\img\SanrioCoffeeLogo1.png"></img> {" "}<Link to="/">Back</Link>{" "}
-       </button>
+     <Link to="/"> <button className="buttonRouter" id="backMain"><img src="src\img\SanrioCoffeeLogo1.png"></img> {" "}<BiArrowBack/>{" "}
+       </button></Link>
       </header>
     )
 } 
