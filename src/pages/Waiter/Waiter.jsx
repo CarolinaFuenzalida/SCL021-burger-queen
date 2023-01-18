@@ -105,7 +105,7 @@ export const Waiter = () => {
         ) : (
           <div className="BeforeOrder">
             <h1 > Selecciona algo del Menú </h1>
-            <img  src="src\img\GudetamaChef1.png" ></img>
+            <img  src="https://cdn.discordapp.com/attachments/1037900045095284787/1065335682614177893/GudetamaChef1.png" ></img>
           </div>
         )} 
        
