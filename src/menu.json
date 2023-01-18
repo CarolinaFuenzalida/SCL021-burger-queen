@@ -7,7 +7,7 @@
         "description": "Tostadas con Huevos estrellados forma de Gudetama",
         "price": 5.00,
         "type": "breakfast",
-        "image": "src/img/Gudetama.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335682278621214/Gudetama.png"
       },
       {
         "id": 2,
@@ -15,7 +15,7 @@
         "description": "Waffles con forma de Twin Star, fruta de temporada y crema chantilli",
         "price": 7.00,
         "type": "breakfast",
-        "image": "src/img/TwinStars.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335757318914078/TwinStars.png"
       },
       {
         "id": 3,
@@ -23,7 +23,7 @@
         "description": "Grilled Sandwich con jamón, 4 quesos, tomate y lechuga",
         "price": 5.00,
         "type": "breakfast",
-        "image": "src/img/Pochacoo.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335735256883280/Pochacoo.png"
       },
       {
         "id": 4,
@@ -31,7 +31,7 @@
         "description": "2 Rollitos de Canela con Frosting",
         "price": 7.00,
         "type": "breakfast",
-        "image": "src/img/CinnamonRoll.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335681989226606/CinnamonRoll.png"
       },
       {
         "id": 5,
@@ -39,7 +39,7 @@
         "description": "Copa con Pudding de Chia, Avena y trozos de Mango, Papaya y Maracuya",
         "price": 6.00,
         "type": "breakfast",
-        "image": "src/img/Pompompurin.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335735500165201/Pompompurin.png"
       },
       {
         "id": 6,
@@ -47,7 +47,7 @@
         "description": "Hamburguesa doble con pan de beterraga, Golf",
         "price": 10.00,
         "type": "lunch",
-        "image": "src/img/MyMelody.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335734522880020/MyMelody.png"
       },
       {
         "id": 7,
@@ -55,7 +55,7 @@
         "description": "Hamburguesa doble con pan negro, BBQ",
         "price": 10.00,
         "type": "lunch",
-        "image": "src/img/Kuromi.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335734292185118/Kuromi.png"
       },
       {
         "id": 8,
@@ -63,7 +63,7 @@
         "description": "Ensalada de hortalizas verdes, tomates cherry",
         "price": 6.00,
         "type": "lunch",
-        "image": "src/img/Keropi.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335734078296244/Keropi.png"
       },
       {
         "id": 9,
@@ -71,7 +71,7 @@
         "description": "Hamburguesa doble con pan saborizado cebolla, salsa extra picante",
         "price": 10.00,
         "type": "lunch",
-        "image": "src/img/Aggretsuko.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335681276194816/Aggretsuko.png"
       },
       {
         "id": 10,
@@ -79,7 +79,7 @@
         "description": "Base de arroz condimentado, toppings de verduras y salmón",
         "price": 8.00,
         "type": "lunch",
-        "image": "src/img/Hangyodon.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335682924552303/Hangyodon.png"
       },
       {
         "id": 11,
@@ -87,7 +87,7 @@
         "description": "Chocolate Caliente",
         "price": 6.00,
         "type": "drinks",
-        "image": "src/img/Chococat.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335681766916186/Chococat.png"
 
       },
       {
@@ -96,7 +96,7 @@
         "description": "Malteada a base de helado, con fresas",
         "price": 6.00,
         "type": "drinks",
-        "image": "src/img/HelloKittyShake.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335683339792464/HelloKittyShake.png"
       },
       {
         "id": 13,
@@ -104,7 +104,7 @@
         "description": "Coctel de la casa, sabor manzana",
         "price": 6.00,
         "type": "drinks",
-        "image": "src/img/Pandapple.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335735055548516/Pandapple.png"
       },
       {
         "id": 14,
@@ -112,7 +112,7 @@
         "description": "Bebida Carbonatada sabor Mango",
         "price": 4.00,
         "type": "drinks",
-        "image": "src/img/BadtzMaru.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335681553014885/BadtzMaru.png"
       },
       {
         "id": 15,
@@ -120,7 +120,7 @@
         "description": "Jugo natural de frutas decorado con algodon de azúcar",
         "price": 5.00,
         "type": "drinks",
-        "image": "src/img/SweetSweetPiano.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335757008539678/SweetSweetPiano.png"
       },
       {
         "id": 16,
@@ -128,7 +128,7 @@
         "description": "Café estilo Japonés",
         "price": 4.00,
         "type": "drinks",
-        "image": "src/img/JapaneseCoffee.png"
+        "image": "https://cdn.discordapp.com/attachments/1037900045095284787/1065335733797265478/JapaneseCoffee.png"
       }
     ]
 }
